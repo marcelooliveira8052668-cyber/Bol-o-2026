@@ -1,0 +1,1097 @@
+/* ===================================
+   RESET
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --verde:#009c3b;
+    --verde-escuro:#006b29;
+
+    --amarelo:#ffdf00;
+    --azul:#002776;
+
+    --branco:#ffffff;
+
+    --cinza:#f4f4f4;
+    --texto:#222;
+
+    --sombra:
+    0 10px 30px rgba(0,0,0,.12);
+
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#fff;
+
+    color:var(--texto);
+
+    overflow-x:hidden;
+
+    line-height:1.7;
+
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+.container{
+
+    width:90%;
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+/* ===================================
+   HEADER
+=================================== */
+
+#header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:999;
+
+    background:
+    rgba(255,255,255,.95);
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+    0 2px 10px rgba(0,0,0,.08);
+
+}
+
+#header .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 0;
+
+}
+
+.logo{
+
+    font-size:1.8rem;
+
+    font-weight:800;
+
+    color:var(--verde);
+
+}
+
+#menu{
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+#menu a{
+
+    color:#222;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+#menu a:hover{
+
+    color:var(--verde);
+
+}
+
+#btn-mobile{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:1.6rem;
+
+}
+
+/* ===================================
+   HERO
+=================================== */
+
+.hero{
+
+    height:100vh;
+
+    position:relative;
+
+    background:
+
+    linear-gradient(
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.55)
+    ),
+
+    url("https://images.unsplash.com/photo-1517927033932-b3d18e61fb3c");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.hero h1{
+
+    font-size:5rem;
+
+    margin-bottom:20px;
+
+    color:var(--amarelo);
+
+}
+
+.hero p{
+
+    font-size:1.3rem;
+
+    max-width:700px;
+
+    margin:auto;
+
+    margin-bottom:35px;
+
+}
+
+/* ===================================
+   BOTÕES
+=================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn-principal{
+
+    background:var(--amarelo);
+
+    color:#111;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.btn-principal:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.btn-secundario{
+
+    border:2px solid white;
+
+    color:white;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    transition:.3s;
+
+}
+
+.btn-secundario:hover{
+
+    background:white;
+
+    color:#111;
+
+}
+
+/* ===================================
+   CONTADOR
+=================================== */
+
+.contador{
+
+    padding:80px 0;
+
+    background:var(--verde);
+
+}
+
+.contador .container{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(200px,1fr));
+
+    gap:20px;
+
+}
+
+.contador-card{
+
+    background:white;
+
+    text-align:center;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:var(--sombra);
+
+}
+
+.contador-card h3{
+
+    font-size:3rem;
+
+    color:var(--verde);
+
+}
+
+.contador-card span{
+
+    font-weight:600;
+
+}
+
+/* ===================================
+   TÍTULOS
+=================================== */
+
+.titulo{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.titulo span{
+
+    color:var(--verde);
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+}
+
+.titulo h2{
+
+    font-size:3rem;
+
+    margin-top:10px;
+
+}
+
+/* ===================================
+   HISTÓRIA DAS COPAS
+=================================== */
+
+.historia{
+
+    padding:120px 0;
+
+    background:#f8fafc;
+
+}
+
+.timeline{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+.ano{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:var(--sombra);
+
+    transition:.3s;
+
+    border-top:6px solid var(--amarelo);
+
+}
+
+.ano:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.ano h3{
+
+    color:var(--verde);
+
+    margin-bottom:15px;
+
+    font-size:1.5rem;
+
+}
+
+.ano p{
+
+    color:#555;
+
+}
+
+/* ===================================
+   PARTICIPAR
+=================================== */
+
+.participar{
+
+    padding:120px 0;
+
+    background:white;
+
+}
+
+#form-participante{
+
+    max-width:700px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+#form-participante input{
+
+    padding:18px;
+
+    border:2px solid #ddd;
+
+    border-radius:12px;
+
+    font-size:1rem;
+
+}
+
+#form-participante input:focus{
+
+    outline:none;
+
+    border-color:var(--verde);
+
+}
+
+#form-participante button{
+
+    background:var(--verde);
+
+    color:white;
+
+    border:none;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+#form-participante button:hover{
+
+    background:var(--verde-escuro);
+
+}
+
+/* ===================================
+   PALPITES
+=================================== */
+
+.palpites{
+
+    padding:120px 0;
+
+    background:#f8fafc;
+
+}
+
+.jogo{
+
+    background:white;
+
+    max-width:800px;
+
+    margin:25px auto;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:var(--sombra);
+
+}
+
+.times{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:25px;
+
+    font-size:1.3rem;
+
+    font-weight:700;
+
+}
+
+.placar{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin-bottom:20px;
+
+}
+
+.placar input{
+
+    width:100px;
+
+    height:60px;
+
+    text-align:center;
+
+    font-size:1.4rem;
+
+    border:2px solid #ddd;
+
+    border-radius:10px;
+
+}
+
+.jogo button{
+
+    width:100%;
+
+    background:var(--amarelo);
+
+    border:none;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.jogo button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ===================================
+   MATA-MATA
+=================================== */
+
+.mata-mata{
+
+    padding:120px 0;
+
+    background:white;
+
+}
+
+.fase-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+.fase{
+
+    background:#f8fafc;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:var(--sombra);
+
+}
+
+.fase h3{
+
+    color:var(--verde);
+
+    margin-bottom:20px;
+
+}
+
+.fase ul li{
+
+    margin-bottom:12px;
+
+}
+
+.final{
+
+    background:
+
+    linear-gradient(
+    135deg,
+    var(--verde),
+    var(--azul)
+    );
+
+    color:white;
+
+}
+
+.premio{
+
+    margin-top:20px;
+
+    background:var(--amarelo);
+
+    color:#111;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    font-size:1.3rem;
+
+    font-weight:800;
+
+}
+
+/* ===================================
+   RANKING
+=================================== */
+
+.ranking{
+
+    padding:120px 0;
+
+    background:#f8fafc;
+
+}
+
+.ranking-card{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+.posicao{
+
+    text-align:center;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:var(--sombra);
+
+}
+
+.posicao span{
+
+    font-size:3rem;
+
+}
+
+.posicao h3{
+
+    margin:15px 0;
+
+}
+
+.posicao strong{
+
+    font-size:1.5rem;
+
+}
+
+.ouro{
+
+    border-top:8px solid gold;
+
+}
+
+.prata{
+
+    border-top:8px solid silver;
+
+}
+
+.bronze{
+
+    border-top:8px solid #cd7f32;
+
+}
+
+/* ===================================
+   ORGANIZADOR
+=================================== */
+
+.organizador{
+
+    padding:120px 0;
+
+    background:white;
+
+}
+
+.admin-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+.admin-card{
+
+    background:#f8fafc;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.admin-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.admin-card i{
+
+    font-size:3rem;
+
+    color:var(--verde);
+
+    margin-bottom:20px;
+
+}
+
+.admin-card h3{
+
+    margin-bottom:15px;
+
+}
+
+/* ===================================
+   SELEÇÕES
+=================================== */
+
+.selecoes{
+
+    padding:120px 0;
+
+    background:#f8fafc;
+
+}
+
+.bandeiras{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap:20px;
+
+}
+
+.bandeira{
+
+    background:white;
+
+    padding:20px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    box-shadow:var(--sombra);
+
+    font-size:1.2rem;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.bandeira:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ===================================
+   CONTATO
+=================================== */
+
+.contato{
+
+    padding:120px 0;
+
+    background:white;
+
+    text-align:center;
+
+}
+
+.btn-whatsapp{
+
+    display:inline-block;
+
+    background:#25d366;
+
+    color:white;
+
+    padding:18px 35px;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.btn-whatsapp:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+
+footer{
+
+    background:var(--azul);
+
+    color:white;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+}
+
+footer h3{
+
+    margin-bottom:15px;
+
+    color:var(--amarelo);
+
+}
+
+footer p{
+
+    margin:8px 0;
+
+}
+
+/* ===================================
+   RESPONSIVO
+=================================== */
+
+@media(max-width:900px){
+
+    .hero h1{
+
+        font-size:3.5rem;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    #btn-mobile{
+
+        display:block;
+
+    }
+
+    #menu{
+
+        display:none;
+
+    }
+
+    .hero{
+
+        padding:100px 20px;
+
+    }
+
+    .hero h1{
+
+        font-size:2.8rem;
+
+    }
+
+    .titulo h2{
+
+        font-size:2.2rem;
+
+    }
+
+    .times{
+
+        flex-direction:column;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+
+        font-size:2.2rem;
+
+    }
+
+    .titulo h2{
+
+        font-size:1.8rem;
+
+    }
+
+    .placar{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .placar input{
+
+        width:80%;
+
+    }
+
+}
+
+.jogo-card{
+    max-width:400px;
+    margin:40px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+    text-align:center;
+}
+
+.data-jogo{
+    display:inline-block;
+    margin-bottom:15px;
+    color:#666;
+    font-size:.9rem;
+}
+
+.jogo-card h2{
+    color:#1b5e20;
+    margin-bottom:30px;
+}
+
+.palpite-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.time{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.time p{
+    font-weight:600;
+    margin-bottom:10px;
+}
+
+.time input{
+    width:70px;
+    height:60px;
+    text-align:center;
+    font-size:1.5rem;
+    border:2px solid #ddd;
+    border-radius:12px;
+}
+
+.vs{
+    font-size:2rem;
+    font-weight:bold;
+    color:#444;
+}
+
+#btnPalpite{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#1b5e20;
+    color:white;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#btnPalpite:hover{
+    transform:translateY(-2px);
+}
+
+.data-jogo{
+    display:block;
+    text-align:center;
+    margin-bottom:20px;
+    font-weight:700;
+    color:#009c3b;
+    font-size:1rem;
+}

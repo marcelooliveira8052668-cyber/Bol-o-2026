@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rumo ao Hexa 2026 | Bolão Oficial</title>
+
+<meta name="description"
+content="Bolão da Copa do Mundo 2026 entre amigos. Faça seus palpites, acompanhe o ranking e dispute o prêmio final.">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ==========================
+     HEADER
+========================== -->
+
+<header id="header">
+
+<div class="container">
+
+<a href="#" class="logo">
+
+🇧🇷 Rumo ao Hexa
+
+</a>
+
+<nav>
+
+<ul id="menu">
+
+<li><a href="#inicio">Início</a></li>
+
+<li><a href="#historia">História</a></li>
+
+<li><a href="#participar">Participar</a></li>
+
+<li><a href="#ranking">Ranking</a></li>
+
+<li><a href="#contato">Contato</a></li>
+
+</ul>
+
+</nav>
+
+<button id="btn-mobile">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+</div>
+
+</header>
+
+<!-- ==========================
+     HERO
+========================== -->
+
+<section id="inicio" class="hero">
+
+<div class="hero-overlay"></div>
+
+<div class="container hero-content">
+
+<h1>
+
+RUMO AO HEXA 2026
+
+</h1>
+
+<p>
+
+Mostre que você entende de futebol.
+
+Faça seus palpites, acumule pontos e dispute o topo do ranking.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#participar" class="btn-principal">
+
+Quero Participar
+
+</a>
+
+<a href="#ranking" class="btn-secundario">
+
+Ver Ranking
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     CONTADOR
+========================== -->
+
+<section class="contador">
+
+<div class="container">
+
+<div class="contador-card">
+
+<h3 id="dias">000</h3>
+
+<span>Dias para a Copa</span>
+
+</div>
+
+<div class="contador-card">
+
+<h3 id="participantes">0</h3>
+
+<span>Participantes</span>
+
+</div>
+
+<div class="contador-card">
+
+<h3>48</h3>
+
+<span>Seleções</span>
+
+</div>
+
+<div class="contador-card">
+
+<h3>104</h3>
+
+<span>Jogos</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     HISTÓRIA DAS COPAS
+========================== -->
+
+<section id="historia" class="historia">
+
+<div class="container">
+
+<div class="titulo">
+
+<span>HISTÓRIA</span>
+
+<h2>As Conquistas do Brasil</h2>
+
+</div>
+
+<div class="timeline">
+
+<div class="ano">
+
+<h3>🏆 1958</h3>
+
+<p>
+
+Primeiro título mundial conquistado na Suécia.
+
+A revelação de Pelé para o mundo.
+
+</p>
+
+</div>
+
+<div class="ano">
+
+<h3>🏆 1962</h3>
+
+<p>
+
+Bicampeonato conquistado no Chile.
+
+Garrincha brilhou e levou o Brasil ao topo.
+
+</p>
+
+</div>
+
+<div class="ano">
+
+<h3>🏆 1970</h3>
+
+<p>
+
+Considerada por muitos a melhor seleção da história.
+
+Tricampeonato no México.
+
+</p>
+
+</div>
+
+<div class="ano">
+
+<h3>🏆 1994</h3>
+
+<p>
+
+Após 24 anos sem títulos.
+
+Brasil conquista o tetracampeonato.
+
+</p>
+
+</div>
+
+<div class="ano">
+
+<h3>🏆 2002</h3>
+
+<p>
+
+O pentacampeonato.
+
+Ronaldo Fenômeno termina como artilheiro.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     CADASTRO
+========================== -->
+
+<section id="participar" class="participar">
+
+<div class="container">
+
+<div class="titulo">
+
+<span>PARTICIPAR</span>
+
+<h2>Entre para o Bolão</h2>
+
+</div>
+
+<form id="form-participante">
+
+<input
+type="text"
+id="nome"
+placeholder="Seu nome"
+required>
+
+<input
+type="text"
+id="cidade"
+placeholder="Sua cidade"
+required>
+
+<input
+type="tel"
+id="whatsapp"
+placeholder="WhatsApp"
+required>
+
+<button type="submit">
+
+Entrar no Bolão
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     PALPITES
+========================== -->
+
+<section class="palpites">
+
+    <div class="container">
+
+        <div class="titulo">
+
+            <span>PALPITES</span>
+
+            <h2>Jogos do Brasil</h2>
+
+        </div>
+
+        <!-- JOGO 1 -->
+
+        <div class="jogo">
+
+            <span class="data-jogo">13/06/2026</span>
+
+            <div class="times">
+
+                <span>🇧🇷 Brasil</span>
+
+                <strong>X</strong>
+
+                <span>🇲🇦 Marrocos</span>
+
+            </div>
+
+            <div class="placar">
+
+                <input type="number" min="0" max="20">
+
+                <input type="number" min="0" max="20">
+
+            </div>
+
+            <button>
+                Salvar Palpite
+            </button>
+
+        </div>
+
+        <!-- JOGO 2 -->
+
+        <div class="jogo">
+
+            <span class="data-jogo">19/06/2026</span>
+
+            <div class="times">
+
+                <span>🇧🇷 Brasil</span>
+
+                <strong>X</strong>
+
+                <span>🇭🇹 Haiti</span>
+
+            </div>
+
+            <div class="placar">
+
+                <input type="number" min="0" max="20">
+
+                <input type="number" min="0" max="20">
+
+            </div>
+
+            <button>
+                Salvar Palpite
+            </button>
+
+        </div>
+
+        <!-- JOGO 3 -->
+
+        <div class="jogo">
+
+            <span class="data-jogo">24/06/2026</span>
+
+            <div class="times">
+
+                <span>🇧🇷 Brasil</span>
+
+                <strong>X</strong>
+
+                <span>🏴 Escócia</span>
+
+            </div>
+
+            <div class="placar">
+
+                <input type="number" min="0" max="20">
+
+                <input type="number" min="0" max="20">
+
+            </div>
+
+            <button>
+                Salvar Palpite
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+     MATA-MATA
+========================== -->
+
+<section id="mata-mata" class="mata-mata">
+
+    <div class="container">
+
+        <div class="titulo">
+
+            <span>MATA-MATA</span>
+
+            <h2>Caminho até a Final</h2>
+
+        </div>
+
+        <div class="fase-grid">
+
+            <div class="fase">
+
+                <h3>Oitavas</h3>
+
+                <ul>
+
+                    <li>Jogo 1</li>
+                    <li>Jogo 2</li>
+                    <li>Jogo 3</li>
+                    <li>Jogo 4</li>
+
+                </ul>
+
+            </div>
+
+            <div class="fase">
+
+                <h3>Quartas</h3>
+
+                <ul>
+
+                    <li>Jogo 1</li>
+                    <li>Jogo 2</li>
+
+                </ul>
+
+            </div>
+
+            <div class="fase">
+
+                <h3>Semifinal</h3>
+
+                <ul>
+
+                    <li>Jogo 1</li>
+                    <li>Jogo 2</li>
+
+                </ul>
+
+            </div>
+
+            <div class="fase final">
+
+                <h3>🏆 FINAL</h3>
+
+                <p>
+
+                    Acertou o placar da final?
+
+                </p>
+
+                <div class="premio">
+
+                    +50 PONTOS
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+     RANKING
+========================== -->
+
+<section id="ranking" class="ranking">
+
+    <div class="container">
+
+        <div class="titulo">
+
+            <span>CLASSIFICAÇÃO</span>
+
+            <h2>Ranking dos Participantes</h2>
+
+        </div>
+<div id="ranking-lista">
+    <p>Nenhum participante cadastrado ainda.</p>
+</div>
+
+</section>
+
+<!-- ==========================
+     PAINEL ORGANIZADOR
+========================== -->
+
+<section class="organizador">
+
+    <div class="container">
+
+        <div class="titulo">
+
+            <span>ADMINISTRADOR</span>
+
+            <h2>Painel do Marcelo</h2>
+
+        </div>
+
+        <div class="admin-grid">
+
+            <div class="admin-card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h3>Participantes</h3>
+
+                <p>
+
+                    Visualizar todos os inscritos.
+
+                </p>
+
+            </div>
+
+            <div class="admin-card">
+
+                <i class="fa-solid fa-futbol"></i>
+
+                <h3>Palpites</h3>
+
+                <p>
+
+                    Acompanhar os palpites enviados.
+
+                </p>
+
+            </div>
+
+            <div class="admin-card">
+
+                <i class="fa-solid fa-ranking-star"></i>
+
+                <h3>Pontuação</h3>
+
+                <p>
+
+                    Atualizar e conferir resultados.
+
+                </p>
+
+            </div>
+
+            <div class="admin-card">
+
+                <i class="fa-solid fa-trophy"></i>
+
+                <h3>Premiação</h3>
+
+                <p>
+
+                    Definir o campeão do bolão.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+     SELEÇÕES FAVORITAS
+========================== -->
+
+<section class="selecoes">
+
+    <div class="container">
+
+        <div class="titulo">
+
+            <span>SELEÇÕES</span>
+
+            <h2>Favoritas ao Título</h2>
+
+        </div>
+
+        <div class="bandeiras">
+
+            <div class="bandeira">🇧🇷 Brasil</div>
+            <div class="bandeira">🇦🇷 Argentina</div>
+            <div class="bandeira">🇫🇷 França</div>
+            <div class="bandeira">🇪🇸 Espanha</div>
+            <div class="bandeira">🇩🇪 Alemanha</div>
+            <div class="bandeira">🇵🇹 Portugal</div>
+            <div class="bandeira">🇺🇾 Uruguai</div>
+            <div class="bandeira">🇳🇱 Holanda</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+     CONTATO
+========================== -->
+
+<section id="contato" class="contato">
+
+    <div class="container">
+
+        <div class="titulo">
+
+            <span>CONTATO</span>
+
+            <h2>Fale com o Organizador</h2>
+
+        </div>
+
+        <a
+        href="https://wa.me/55SEUNUMERO"
+        class="btn-whatsapp"
+        target="_blank">
+
+            <i class="fab fa-whatsapp"></i>
+
+            Falar com Marcelo
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <div class="container">
+
+        <h3>
+
+            🇧🇷 Rumo ao Hexa 2026
+
+        </h3>
+
+        <p>
+
+            Bolão entre amigos criado por Marcelo Oliveira.
+
+        </p>
+
+        <p>
+
+            Que venha o Hexa! 🏆
+
+        </p>
+
+    </div>
+
+</footer>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>
