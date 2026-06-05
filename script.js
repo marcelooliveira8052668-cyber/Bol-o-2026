@@ -68,103 +68,101 @@ atualizarContador,
 /* ===================================
    PARTICIPANTES FIREBASE
 =================================== */
-
 import {
   db,
   doc,
   setDoc,
   getDoc,
   collection,
-  getDocs
+  getDocs,
+  addDoc
 }
-from "./firebase.js";
+/* ===================================
+   PALPITES FIREBASE
+=================================== */
 
-const formulario =
-document.getElementById(
-"form-participante"
-);
+const botoesPalpite =
+document.querySelectorAll(".jogo button");
 
-if(formulario){
+botoesPalpite.forEach((botao,index)=>{
 
-formulario.addEventListener(
+    botao.addEventListener("click",
 
-"submit",
+    async ()=>{
 
-async (e)=>{
+        const jogo =
+        botao.closest(".jogo");
 
-e.preventDefault();
+        const inputs =
+        jogo.querySelectorAll("input");
 
-const nome =
-document.getElementById("nome").value.trim();
+        const placarBrasil =
+        inputs[0].value;
 
-const cidade =
-document.getElementById("cidade").value.trim();
+        const placarAdversario =
+        inputs[1].value;
 
-const whatsapp =
-document.getElementById("whatsapp").value.trim();
+        if(
+            placarBrasil === "" ||
+            placarAdversario === ""
+        ){
 
-try{
+            alert(
+            "Digite os dois placares."
+            );
 
-const participanteRef =
-doc(
-db,
-"participantes",
-whatsapp
-);
+            return;
+        }
 
-const participanteExiste =
-await getDoc(
-participanteRef
-);
+        const nome =
+        prompt(
+        "Digite seu nome cadastrado:"
+        );
 
-if(participanteExiste.exists()){
+        if(!nome) return;
 
-alert(
-"Esse WhatsApp já está cadastrado."
-);
+        try{
 
-return;
+            await addDoc(
 
-}
+                collection(
+                    db,
+                    "palpites"
+                ),
 
-await setDoc(
+                {
+                    participante:nome,
+                    jogo:index + 1,
+                    brasil:Number(
+                        placarBrasil
+                    ),
+                    adversario:Number(
+                        placarAdversario
+                    ),
+                    data:new Date()
+                }
 
-participanteRef,
+            );
 
-{
-nome,
-cidade,
-whatsapp,
-pontos:0,
-dataCadastro:new Date()
-}
+            alert(
+            "Palpite salvo com sucesso!"
+            );
 
-);
+        }catch(erro){
 
-alert(
-`${nome} entrou no bolão! 🇧🇷`
-);
+            console.error(
+                erro
+            );
 
-formulario.reset();
+            alert(
+            "Erro ao salvar palpite."
+            );
 
-atualizarParticipantes();
+        }
 
-}catch(error){
+    });
 
-console.error(error);
-
-alert(
-"Erro ao cadastrar."
-);
-
-}
-
-}
-
-);
-
-}
-
+});
 /* ===================================
    VOLTAR AO TOPO
 =================================== */
