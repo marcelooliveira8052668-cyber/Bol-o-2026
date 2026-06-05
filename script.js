@@ -2,12 +2,6 @@
    MENU MOBILE
 =================================== */
 
-import {
-db,
-collection,
-addDoc
-}
-from "./firebase.js";
 const btnMobile =
 document.getElementById("btn-mobile");
 
@@ -66,17 +60,24 @@ function atualizarContador(){
 
 }
 
-atualizarContador();
-
 setInterval(
 atualizarContador,
-1000
+60000
 );
-
 
 /* ===================================
    PARTICIPANTES FIREBASE
 =================================== */
+
+import {
+  db,
+  doc,
+  setDoc,
+  getDoc,
+  collection,
+  getDocs
+}
+from "./firebase.js";
 
 const formulario =
 document.getElementById(
@@ -89,36 +90,53 @@ formulario.addEventListener(
 
 "submit",
 
-async function(e){
+async (e)=>{
 
 e.preventDefault();
 
 const nome =
-document.getElementById("nome").value;
+document.getElementById("nome").value.trim();
 
 const cidade =
-document.getElementById("cidade").value;
+document.getElementById("cidade").value.trim();
 
 const whatsapp =
-document.getElementById("whatsapp").value;
+document.getElementById("whatsapp").value.trim();
 
 try{
 
-await addDoc(
-
-collection(
+const participanteRef =
+doc(
 db,
-"participantes"
-),
+"participantes",
+whatsapp
+);
+
+const participanteExiste =
+await getDoc(
+participanteRef
+);
+
+if(participanteExiste.exists()){
+
+alert(
+"Esse WhatsApp já está cadastrado."
+);
+
+return;
+
+}
+
+await setDoc(
+
+participanteRef,
 
 {
-
-nome:nome,
-cidade:cidade,
-whatsapp:whatsapp,
+nome,
+cidade,
+whatsapp,
 pontos:0,
 dataCadastro:new Date()
-
 }
 
 );
@@ -129,12 +147,14 @@ alert(
 
 formulario.reset();
 
+atualizarParticipantes();
+
 }catch(error){
 
 console.error(error);
 
 alert(
-"Erro ao cadastrar participante."
+"Erro ao cadastrar."
 );
 
 }
@@ -144,80 +164,6 @@ alert(
 );
 
 }
-
-
-const botoesPalpite =
-
-document.querySelectorAll(
-".jogo button"
-);
-
-botoesPalpite.forEach(
-
-(botao,index)=>{
-
-botao.addEventListener(
-
-"click",
-
-()=>{
-
-const inputs =
-
-botao.parentElement
-.querySelectorAll("input");
-
-const placarCasa =
-inputs[0].value;
-
-const placarFora =
-inputs[1].value;
-
-if(
-
-placarCasa === "" ||
-
-placarFora === ""
-
-){
-
-alert(
-
-"Digite os dois placares."
-
-);
-
-return;
-
-}
-
-localStorage.setItem(
-
-`palpite-${index}`,
-
-JSON.stringify({
-
-casa:placarCasa,
-fora:placarFora
-
-})
-
-);
-
-alert(
-
-`Palpite salvo:
-Brasil ${placarCasa} x ${placarFora}`
-
-);
-
-}
-
-);
-
-}
-
-);
 
 /* ===================================
    VOLTAR AO TOPO
@@ -396,25 +342,55 @@ console.log(
 
 );
 
-async function cadastrarParticipante(nome, cidade, whatsapp){
 
-  try{
 
-    await setDoc(
-  doc(db,"participantes",whatsapp),
-  {
-    nome,
-    cidade,
-    whatsapp,
-    pontos:0
-  }
-);
-    alert("Participante cadastrado!");
 
-  }catch(erro){
 
-    console.error(erro);
 
-  }
+
+function palpiteEncerrado(dataJogo){
+
+    const agora = new Date();
+
+    return agora > new Date(dataJogo);
 
 }
+const botoesPalpite =
+document.querySelectorAll(".jogo button");
+
+botoesPalpite.forEach((botao)=>{
+
+    botao.addEventListener("click", ()=>{
+
+        const jogo =
+        botao.closest(".jogo");
+
+        const inputs =
+        jogo.querySelectorAll("input");
+
+        const placarBrasil =
+        inputs[0].value;
+
+        const placarAdversario =
+        inputs[1].value;
+
+        if(
+            placarBrasil === "" ||
+            placarAdversario === ""
+        ){
+
+            alert(
+            "Digite os dois placares."
+            );
+
+            return;
+        }
+
+        alert(
+        `Palpite salvo:
+Brasil ${placarBrasil} x ${placarAdversario}`
+        );
+
+    });
+
+});
